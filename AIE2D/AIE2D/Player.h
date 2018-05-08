@@ -17,9 +17,11 @@ public:
 	void Update(float deltaTime, aie::Input* input);
 	void Draw(aie::Renderer2D* spriteBatch);
 
-
 private:
 	glm::vec2* m_pos;
 	aie::Texture* m_texture;
+	float m_angle;
+	void RotateLeft(float input);
+	void RotateRight(float input);
 };
 

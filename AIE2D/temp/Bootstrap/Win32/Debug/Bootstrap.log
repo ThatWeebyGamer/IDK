@@ -1,12 +1,7 @@
-﻿  Texture.cpp
-  Renderer2D.cpp
-  Input.cpp
-  imgui_glfw3.cpp
-  Gizmos.cpp
-  Font.cpp
-  Application.cpp
-  imgui_draw.cpp
-  imgui.cpp
+﻿  Application.cpp
   Generating Code...
-  gl_core_4_4.c
-  Bootstrap.vcxproj -> L:\source\repos\AIE2D\temp\Bootstrap\Win32\Debug\Bootstrap.lib
+  Compiling...
+  imgui_glfw3.cpp
+  Input.cpp
+  Generating Code...
+  Bootstrap.vcxproj -> L:\IDK.git\trunk\AIE2D\temp\Bootstrap\Win32\Debug\Bootstrap.lib

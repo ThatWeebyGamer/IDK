@@ -2,6 +2,7 @@
 
 #include "Application.h"
 #include "Renderer2D.h"
+#include "Player.h"
 
 class AIE2DApp : public aie::Application {
 public:
@@ -19,4 +20,5 @@ protected:
 
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
+	Player*				m_player;
 };

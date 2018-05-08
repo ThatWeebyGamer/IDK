@@ -15,6 +15,8 @@ bool AIE2DApp::startup() {
 	
 	m_2dRenderer = new aie::Renderer2D();
 
+	m_player = new Player(new glm::vec2(640, 360));
+
 	// TODO: remember to change this when redistributing a build!
 	// the following path would be used instead: "./font/consolas.ttf"
 	m_font = new aie::Font("../bin/font/consolas.ttf", 32);
@@ -33,6 +35,8 @@ void AIE2DApp::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
+	m_player->Update(deltaTime, input);
+
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
@@ -47,7 +51,8 @@ void AIE2DApp::draw() {
 	m_2dRenderer->begin();
 
 	// draw your stuff here!
-	
+	m_player->Draw(m_2dRenderer);
+
 	// output some text, uses the last used colour
 	m_2dRenderer->drawText(m_font, "Press ESC to quit", 0, 0);
 
