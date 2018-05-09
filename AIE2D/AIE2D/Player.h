@@ -23,5 +23,6 @@ private:
 	float m_angle;
 	void RotateLeft(float input);
 	void RotateRight(float input);
+	int speed = 0;
 };
 

@@ -29,25 +29,41 @@ void Player::Update(float deltaTime, aie::Input* input)
 	float yNew = m_pos->x * s + m_pos->y * c;
 	if (input->isKeyDown(aie::INPUT_KEY_A))
 	{
-		RotateLeft(30 * deltaTime);
+		RotateLeft(60 * deltaTime);
 		//m_pos->x -= 60.0f * deltaTime;
 	}
 	if (input->isKeyDown(aie::INPUT_KEY_D))
 	{
-		RotateRight(30 * deltaTime);
+		RotateRight(60 * deltaTime);
 	}
 	if (input->isKeyDown(aie::INPUT_KEY_W))
 	{
-		m_pos->x += 60.0f * (float)sin((m_angle) * 180 / PI) * deltaTime;
-		m_pos->y += 60.0f * (float)cos((m_angle) * 180 / PI) * deltaTime;
+		if (speed < 250) {
+			speed += 30;
+			m_texture = new aie::Texture("../bin/textures/ship_moving.png");
+		}
 		//m_pos->y = yNew * deltaTime;
 		//m_pos->y += 60.0f * deltaTime;
 	}
 	if (input->isKeyDown(aie::INPUT_KEY_S))
 	{
-		//m_pos->y -= 60.0f * deltaTime;
+		if (speed > 0)
+			speed -= 30;
+		if (speed == 0)
+			m_texture = new aie::Texture("../bin/textures/ship.png");
 	}
-
+	if (m_pos->x > 1280)
+		m_pos->x = 0;
+	if (m_pos->x < 0)
+		m_pos->x = 1280;
+	if (m_pos->y > 720)
+		m_pos->y = 0;
+	if (m_pos->y < 0)
+		m_pos->y = 720;
+	if (speed > 0) {
+		m_pos->x -= speed * (float)sin((m_angle)) * deltaTime;
+		m_pos->y += speed * (float)cos((m_angle)) * deltaTime;
+	}
 }
 
 void Player::Draw(aie::Renderer2D * spriteBatch)

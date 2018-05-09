@@ -1,5 +1,3 @@
-﻿  Player.cpp
-l:\idk.git\trunk\aie2d\aie2d\player.cpp(60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-l:\idk.git\trunk\aie2d\aie2d\player.cpp(65): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  main.cpp
   AIE2D.vcxproj -> L:\IDK.git\trunk\AIE2D\temp\AIE2D\Win32\Debug\AIE2D.exe
   AIE2D.vcxproj -> L:\IDK.git\trunk\AIE2D\temp\AIE2D\Win32\Debug\AIE2D.pdb (Full PDB)

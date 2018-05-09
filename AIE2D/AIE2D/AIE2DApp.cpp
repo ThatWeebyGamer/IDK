@@ -54,7 +54,7 @@ void AIE2DApp::draw() {
 	m_player->Draw(m_2dRenderer);
 
 	// output some text, uses the last used colour
-	m_2dRenderer->drawText(m_font, "Press ESC to quit", 0, 0);
+	m_2dRenderer->drawText(m_font, "$150 for 1080p, $300 for 2K, $600 for 4K and $900 for Full Game with complete RGB", 0, 0);
 
 	// done drawing sprites
 	m_2dRenderer->end();
