@@ -27,15 +27,17 @@ void Player::Update(float deltaTime, aie::Input* input)
 	float c = cos(m_angle);
 	float xNew = m_pos->x * c - m_pos->y * s;
 	float yNew = m_pos->x * s + m_pos->y * c;
+	//if the A key is pressed rotate to the left
 	if (input->isKeyDown(aie::INPUT_KEY_A))
 	{
 		RotateLeft(60 * deltaTime);
-		//m_pos->x -= 60.0f * deltaTime;
 	}
+	//if the D key is pressed rotate to the right
 	if (input->isKeyDown(aie::INPUT_KEY_D))
 	{
 		RotateRight(60 * deltaTime);
 	}
+
 	if (input->isKeyDown(aie::INPUT_KEY_W))
 	{
 		if (speed < 250) {
@@ -45,12 +47,17 @@ void Player::Update(float deltaTime, aie::Input* input)
 		//m_pos->y = yNew * deltaTime;
 		//m_pos->y += 60.0f * deltaTime;
 	}
+
 	if (input->isKeyDown(aie::INPUT_KEY_S))
 	{
 		if (speed > 0)
 			speed -= 30;
 		if (speed == 0)
 			m_texture = new aie::Texture("../bin/textures/ship.png");
+	}
+
+	if (input->isKeyDown(aie::INPUT_KEY_SPACE)) {
+
 	}
 	if (m_pos->x > 1280)
 		m_pos->x = 0;
