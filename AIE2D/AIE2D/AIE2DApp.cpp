@@ -32,6 +32,8 @@ bool AIE2DApp::startup() {
 		std::cout << "could not load the texture file" << std::endl;
 	}
 
+	cookies = 0;
+
 	return true;
 }
 
@@ -104,9 +106,15 @@ void AIE2DApp::draw() {
 	ImGui::Button("Buy Now $1000");
 	ImGui::End();
 
+	ImGui::Begin("Cookie Clicker Ripoff", 0, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_AlwaysAutoResize);
+	if (ImGui::Button("Cookie"))
+		cookies++;
+	ImGui::Text("%i Cookies", cookies);
+	ImGui::End();
+
 
 	// output some text, uses the last used colour
-	m_2dRenderer->drawText(m_font, "Press ESC to close", 5, 10);
+	m_2dRenderer->drawText(m_font, "Press ESC to suicide", 5, 10);
 
 	// done drawing sprites
 	m_2dRenderer->end();

@@ -44,6 +44,8 @@ void Player::Update(float deltaTime, aie::Input* input)
 			speed += 30;
 			m_texture = new aie::Texture("../bin/textures/ship_moving.png");
 		}
+		else
+			speed = 250;
 		//m_pos->y = yNew * deltaTime;
 		//m_pos->y += 60.0f * deltaTime;
 	}
@@ -57,7 +59,8 @@ void Player::Update(float deltaTime, aie::Input* input)
 	}
 
 	if (input->isKeyDown(aie::INPUT_KEY_SPACE)) {
-
+		speed += 30;
+		m_texture = new aie::Texture("../bin/textures/ship_moving.png");
 	}
 	if (m_pos->x > 1280)
 		m_pos->x = 0;
