@@ -46,14 +46,14 @@ void Player::Update(float deltaTime, aie::Input* input)
 		}
 		else
 			speed = 250;
-		//m_pos->y = yNew * deltaTime;
-		//m_pos->y += 60.0f * deltaTime;
 	}
 
 	if (input->isKeyDown(aie::INPUT_KEY_S))
 	{
 		if (speed > 0)
 			speed -= 30;
+		if (speed < 0)
+			speed = 0;
 		if (speed == 0)
 			m_texture = new aie::Texture("../bin/textures/ship.png");
 	}
