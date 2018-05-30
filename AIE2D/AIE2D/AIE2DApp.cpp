@@ -114,6 +114,7 @@ void AIE2DApp::draw() {
 
 
 	// output some text, uses the last used colour
+	m_2dRenderer->drawText(m_font, "Microtransaction Simulator 2019", 380, 680);
 	m_2dRenderer->drawText(m_font, "Press ESC to suicide", 5, 10);
 
 	// done drawing sprites
